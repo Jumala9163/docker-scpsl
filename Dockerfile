@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM alpine:latest
 LABEL maintainer="Parkeymon"
 USER root
 RUN echo "Building.."
