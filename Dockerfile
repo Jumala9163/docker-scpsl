@@ -27,7 +27,8 @@ RUN npm install --global yarn
 RUN apt-get update
 RUN wget https://ryanfortner.github.io/box64-debs/box64.list -O /etc/apt/sources.list.d/box64.list
 RUN wget -O- https://ryanfortner.github.io/box64-debs/KEY.gpg | gpg --dearmor | tee /usr/share/keyrings/box64-debs-archive-keyring.gpg
-RUN apt-get update && apt-get install box64 -y
+RUN RUN apt-get -y update
+RUN apt-get install box64 -y
 RUN apt-get install -y mono-complete
 RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
 RUN usermod -a -G container container
